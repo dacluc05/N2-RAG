@@ -1,0 +1,94 @@
+{
+  "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+  "cases": [
+    {
+      "metric": "Financial data accuracy",
+      "input": "AAPL FY2024 · revenue",
+      "expected": 391035000000,
+      "actual": 391035000000.0,
+      "pass": true
+    },
+    {
+      "metric": "Calculation accuracy",
+      "input": "AAPL FY2024 · revenue_growth",
+      "expected": 2.0219940775141,
+      "actual": 2.0219940775141225,
+      "pass": true
+    },
+    {
+      "metric": "Calculation accuracy",
+      "input": "AAPL FY2024 · gross_margin",
+      "expected": 46.2063498152352,
+      "actual": 46.20634981523393,
+      "pass": true
+    },
+    {
+      "metric": "Calculation accuracy",
+      "input": "AAPL FY2024 · fcf",
+      "expected": 108807000000,
+      "actual": 108807000000.0,
+      "pass": true
+    },
+    {
+      "metric": "Missing data handling",
+      "input": "ROIC không đủ đầu vào",
+      "expected": null,
+      "actual": null,
+      "pass": true
+    },
+    {
+      "metric": "Contradiction detection",
+      "input": "Giả lập AAPL tăng 18% có ID nguồn tồn tại",
+      "expected": "CONTRADICTED",
+      "actual": "CONTRADICTED",
+      "pass": true
+    },
+    {
+      "metric": "Evidence support",
+      "input": "ID hợp lệ nhưng mệnh đề không được đối chiếu nội dung",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "pass": true
+    },
+    {
+      "metric": "Citation validity",
+      "input": "ID không tồn tại",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "pass": true
+    },
+    {
+      "metric": "Temporal correctness",
+      "input": "S2 công bố sau mốc",
+      "expected": [
+        "S1"
+      ],
+      "actual": [
+        "S1"
+      ],
+      "pass": true
+    },
+    {
+      "metric": "Retrieval quality",
+      "input": "Truy vấn có một đoạn gắn nhãn S1",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    }
+  ],
+  "passed": 10,
+  "count": 10,
+  "offline_latency_ms": 4.28,
+  "live_api_calls": 0,
+  "baseline": {
+    "original_full_run": "not_run",
+    "v1_full_run": "not_run",
+    "v1_citation_id_rule": {
+      "input": "Doanh thu tăng 18%. [S1]",
+      "actual_accepted_ids": [
+        "S1"
+      ],
+      "same_input_v2_status": "CONTRADICTED"
+    }
+  }
+}
